@@ -1,0 +1,16 @@
+apiVersion: keycloak.org/v1alpha1
+kind: Keycloak
+metadata:
+  name: keycloak
+  labels:
+    app: sso
+  namespace: javacro
+spec:
+  instances: 1
+  externalAccess:
+    enabled: True
+  podDisruptionBudget:
+    enabled: True
+  # User needs to provision the external database this is for PoC only
+  externalDatabase:
+    enabled: false
